@@ -20,9 +20,9 @@ driver.get('https://hiroba.dqx.jp/sc/search/')
 time.sleep(1)
 # 検索窓入力
 s = driver.find_element(By.XPATH,'//*[@id="sqexid"]')
-s.send_keys('tatt08')
+s.send_keys('user')
 s = driver.find_element(By.XPATH,'//*[@id="password"]')
-s.send_keys('4tattkmhr')
+s.send_keys('pass')
 # ログインボタンクリック
 driver.find_element(By.XPATH,'//*[@id="login-button"]').click()
 driver.find_element(By.XPATH,'//*[@id="welcome_box"]/div[2]/a').click()
@@ -53,6 +53,7 @@ for h in hiragana:
             driver.find_element(By.XPATH,'//*[@class="next"]').click()
         else:
             break
+    sleep(5)
 # 無駄な要素を削除
 exhibition_data = [i for i in exhibition_data if len(i) > 1 and i[0] != "アイテム名"]
 
